@@ -1,2 +1,1 @@
 # telerelay
-Telegram bot relay
