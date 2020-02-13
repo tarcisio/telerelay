@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
-
+	"fmt"
 	tb "gopkg.in/tucnak/telebot.v2"
 )
 
@@ -32,6 +32,9 @@ func main() {
 		panic(err)
 	}
 	b.Handle(tb.OnText, func(m *tb.Message) {
+		fmt.Println("USER ID:")
+		fmt.Println(m.Sender.ID)
+		
 		if m.Sender.ID == dono {
 			index := strings.Index(m.Text, " ")
 			usr, err := strconv.Atoi(m.Text[:index])
